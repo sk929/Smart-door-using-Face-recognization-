@@ -1,8 +1,4 @@
 #include<p18f4580.h>
-
-
-
-
 void delay()
 {
 	int x,y,z;
@@ -43,26 +39,11 @@ void main(void)
 			delay();
 			PORTBbits.RB0=0xFF;
 			
-			
-			
-			
-			
+						
 			PORTDbits.RD0=0;
 			PORTDbits.RD1=0;
-			
-
-
-				
-							
-			
-			
 			while(1)
 			{//2
-			
-
-
-
-						
 					i=0;
 					if(i==0)
 					{//3
@@ -96,20 +77,9 @@ void main(void)
 					}//3	
 				
 				
-			
-			
-			
-			
-				
-				
-			
+
 			
 			}//2
-
-
-
-
-
 
 
 
