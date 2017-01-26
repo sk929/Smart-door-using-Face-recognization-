@@ -1,0 +1,118 @@
+#include<p18f4580.h>
+
+
+
+
+void delay()
+{
+	int x,y,z;
+	for(x=0;x<10;x++)
+	{
+		for(y=0;y<10;y++)
+		z++;
+
+	}
+
+}
+
+
+void main(void)
+{//1
+			int i,j,k;
+		
+				
+			TRISB=0x00;
+			TRISA=0xff;
+			
+			TRISCbits.TRISC7=1;
+			TRISCbits.TRISC6=0;
+			
+			TRISD=0;
+			
+			TXSTA=0X20;
+			SPBRG=15;
+			
+			TXSTAbits.TXEN=1;
+			RCSTAbits.SPEN=1;
+			RCSTAbits.CREN=1;
+				
+			
+			PORTBbits.RB0=0xFF;
+			delay();
+			PORTBbits.RB0=0x00;
+			delay();
+			PORTBbits.RB0=0xFF;
+			
+			
+			
+			
+			
+			PORTDbits.RD0=0;
+			PORTDbits.RD1=0;
+			
+
+
+				
+							
+			
+			
+			while(1)
+			{//2
+			
+
+
+
+						
+					i=0;
+					if(i==0)
+					{//3
+						PORTBbits.RB0=1;
+						j=0X01;
+						
+						while(TXSTAbits.TRMT==0)
+						TXREG=j;
+						
+						while(PIR1bits.RCIF==0);
+						k=RCREG;
+						
+						//if(k==0x01 )
+						if(1)
+						{//4
+							
+							PORTDbits.RD0=1;
+							PORTDbits.RD1=0;
+							delay();
+							PORTDbits.RD0=0;
+							PORTDbits.RD1=1;
+							delay();
+							PORTDbits.RD0=0;
+							PORTDbits.RD1=0;
+							
+							
+								
+						
+						}//4	
+						
+					}//3	
+				
+				
+			
+			
+			
+			
+				
+				
+			
+			
+			}//2
+
+
+
+
+
+
+
+
+
+//1
+}
